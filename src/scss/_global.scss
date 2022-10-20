@@ -73,7 +73,7 @@ body {
         display: flex;
         padding: 10px 15px 10px 15px;
         transition: all .2s;
-        
+
         img {
             max-width: rem(120);
         }
@@ -167,7 +167,7 @@ body {
             color: $accent-color;
         }
     }
-    
+
     &__button {
         &:not(:last-child) {
             margin-right: rem(10);
@@ -435,7 +435,9 @@ h5 {
 
     &__subtitle {}
 
-    &__lvl-list {}
+    &__lvl-list {
+        padding-left: em(20, 16);
+    }
 
     &__lvl-item {
         display: flex;
@@ -456,6 +458,25 @@ h5 {
         align-self: center;
         margin: rem(30) 0 0;
     }
+
+    &__ord-list {
+        a {
+            color: $accent-color;
+            text-decoration: underline;
+
+            &:hover{
+                color: $hover-color;
+                text-decoration: none;
+            }
+        }
+    }
+    &__ord-item {
+        list-style-position: inside;
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
 }
 
 .soon {
@@ -466,5 +487,189 @@ h5 {
 
     &__title {
         margin: 0;
+    }
+}
+
+// ПОПОВЕР
+//  Tooltip Colours
+// ––––––––––––––––––––––––––––––
+
+$color-red: #C0182A;
+$color-orange: #EE8304;
+$color-yellow: #FBF60A;
+$color-green: #0BAD7D;
+$color-blue: #235ECF;
+$color-violet: #A152AD;
+$color-black: #3f3c49;
+$color-white: #FFFFFF;
+
+
+//  Used for Preview Stuff only
+// ––––––––––––––––––––––––––––––
+
+$color-dark: #14161a;
+
+@mixin colors() {
+    $colors: (red: $color-red,
+        orange: $color-orange,
+        yellow: $color-yellow,
+        green: $color-green,
+        blue: $color-blue,
+        violet: $color-violet,
+        black: $color-black,
+        white: $color-white,
+    );
+
+    @each $name,
+    $hex in $colors {
+        @content($name, $hex);
+    }
+}
+
+.jax\:tooltip {
+    width: auto;
+    padding: 5px 15px;
+    opacity: 0;
+    z-index: 99999;
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    font-size: 14px;
+    line-height: 1.25;
+    border-radius: 3px;
+    pointer-events: none;
+
+    &.tooltip\:show {
+        opacity: 1.0;
+    }
+
+    &:after {
+        width: 0;
+        height: 0;
+        content: "";
+        display: block;
+        position: absolute;
+        border-style: solid;
+    }
+
+    // Tooltip Positions
+    &.tooltip\:top {
+        margin-top: -10px;
+
+        &:after {
+            top: 100%;
+            left: calc(50% - #{10px});
+            border-width: 10px 10px 0 10px;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &.tooltip\:left {
+        margin-left: -10px;
+
+        &:after {
+            top: calc(50% - #{10px});
+            left: 100%;
+            border-width: 10px 0 10px 10px;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &.tooltip\:right {
+        margin-left: 10px;
+
+        &:after {
+            top: calc(50% - #{10px});
+            left: -10px;
+            border-width: 10px 10px 10px 0;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &.tooltip\:bottom {
+        margin-top: 10px;
+
+        &:after {
+            top: -10px;
+            left: calc(50% - #{10px});
+            border-width: 0 10px 10px 10px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+    }
+
+    // Tooltip Colours
+    @include colors using ($name, $hex) {
+        &.tooltip\:#{"" + $name} {
+            @if $name ==black {
+                color: $color-white;
+            }
+
+            @else {
+                color: $color-black;
+            }
+
+            background-color: $hex;
+
+            &:after {
+                color: $hex;
+            }
+        }
+    }
+
+    // Tooltip Animations
+    &.tooltip\:none {
+        transition: none;
+    }
+
+    &.tooltip\:fade {
+        transition: opacity 142ms linear;
+    }
+
+    &.tooltip\:ease-in {
+        transition: margin 142ms linear, opacity 142ms linear;
+
+        &.tooltip\:top:not(.tooltip\:show) {
+            margin-top: -(10px * 2.5);
+        }
+
+        &.tooltip\:left:not(.tooltip\:show) {
+            margin-left: -(10px * 2.5);
+        }
+
+        &.tooltip\:right:not(.tooltip\:show) {
+            margin-left: (10px * 2.5);
+        }
+
+        &.tooltip\:bottom:not(.tooltip\:show) {
+            margin-top: (10px * 2.5);
+        }
+    }
+
+    &.tooltip\:ease-out {
+        transition: margin 142ms linear, opacity 142ms linear;
+
+        &.tooltip\:top:not(.tooltip\:show) {
+            margin-top: (10px * 0.5);
+        }
+
+        &.tooltip\:left:not(.tooltip\:show) {
+            margin-left: (10px * 0.5);
+        }
+
+        &.tooltip\:right:not(.tooltip\:show) {
+            margin-left: -(10px * 0.5);
+        }
+
+        &.tooltip\:bottom:not(.tooltip\:show) {
+            margin-top: -(10px * 0.5);
+        }
     }
 }

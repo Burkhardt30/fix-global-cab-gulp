@@ -214,7 +214,6 @@
 
     &__status {
         background: $inactived-color;
-        // box-shadow: 0px 0px rem(10) $inactived-color;
 
         position: relative;
 
@@ -280,16 +279,11 @@
             }
 
             &::after {
-                content: 'Inactivate';
-                background: $inactived-color;
+                content: none;
             }
 
             &:hover {
                 background: $accent-color;
-
-                &::after {
-                    box-shadow: 0px 0px rem(10) $inactived-color;
-                }
             }
         }
 
@@ -305,6 +299,38 @@
             background: #44c4e121;
         }
     }
+
+    &--pending {
+        box-shadow: 0px 0px 9px 3px #e0c216;
+
+        .nft-option__status {
+            background: #e0c216;
+
+            &::before {
+                content: 'Pending';
+            }
+
+            &::after {
+                content: none;
+            }
+
+            &:hover {
+                background: #e0c216;
+            }
+        }
+
+        .nft-option__cell-inner {
+            background: #e0c216;
+        }
+
+        .nft-option__voucher {
+            background: #e0c216;
+        }
+
+        &:hover {
+            background: #e0c21621;
+        }
+    }
 }
 
 .buy-sell {
@@ -312,7 +338,7 @@
     &__title {}
 
     &__list {
-        @include gridCards(fit, 260px, .2fr, 0);
+        @include gridCards(fit, 320px, .25fr, 0);
         margin: 0 rem(-15) rem(-30);
     }
 
@@ -356,6 +382,7 @@
         font-size: 18px;
         line-height: 1.2;
         margin-bottom: 20px;
+        white-space: nowrap;
     }
 
     &__item-desc {

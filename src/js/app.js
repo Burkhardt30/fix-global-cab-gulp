@@ -4,6 +4,7 @@ import DataTable from 'datatables.net'
 import 'datatables.net-responsive'
 import $ from 'jquery'
 import { Modal } from './modules/modal.js'
+import { tooltip } from './modules/popover.js'
 
 moduleFunctions.isWebp()
 
@@ -62,3 +63,11 @@ function myFunction() {
 }
 
 const modal = new Modal({})
+
+// ПОПОВЕР
+/*
+ |  DOCUMENT INITIALIZER
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    tooltip('[data-tooltip]:not([data-jax-tooltip-id]),[data-handle="tooltip"][title]:not([data-jax-tooltip-id])', {});
+});
