@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("./html/head.html", {
+"title": "FIX Global",
+})
+
+<body>
+    <div class="wrapper">
+        @@include("./html/aside.html", {})
+        <div class="content">
+            <main class="main">
+                @@include("./html/user-nav.html", {})
+                <section class="main__contact contact">
+                    <div class="container">
+                        <div class="contact__inner">
+                            <div class="contact__chat">
+                                <iframe src="https://jivo.chat/MXHH2C0p5W" title="Jivo Chat Manager"></iframe>
+                            </div>
+                            <div class="contact__body">
+                                <h2 class="contact__title">
+                                    You still have a question?
+                                </h2>
+                                <p class="contact__desc">
+                                    If you cannot find a question in our FAQ, you can always contact us. We will answer
+                                    to you shortly!
+                                </p>
+                                <div class="contact__option option-contact">
+                                    <a class="option-contact__link" style="background: url('@img/decor/manager/telegram.jpg') 0 50% / auto 100% no-repeat;" href="https://t.me/profixone_support" target="_blank">
+                                        <div class="option-contact__name">
+                                            ProfiXone Manager in Telegram
+                                        </div>
+                                        <p class="option-contact__text">
+                                            We are always happy to help!
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="contact__option option-contact">
+                                    <a class="option-contact__link" style="background: url('@img/decor/manager/email.jpg') 0 50% / cover no-repeat;" href="mailto:support@profixone.com" target="_blank">
+                                        <div class="option-contact__name">
+                                            support@profixone.com
+                                        </div>
+                                        <p class="option-contact__text">
+                                            Best way to get answer faster!
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include("./html/footer.html", {})
+        </div>
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

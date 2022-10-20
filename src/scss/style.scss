@@ -1,0 +1,584 @@
+@import "reset";
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "global";
+
+.home {
+    &__title {}
+
+    &__nft-card {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.nft-card {
+    display: flex;
+    flex-direction: column;
+
+    &__inner {
+        background: $white-color;
+        box-shadow: $shadow;
+        padding: 20px;
+        border-radius: 7px;
+
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    &__about {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        border-right: 1px solid #f6f6f6;
+        padding-right: 15px;
+    }
+
+    &__desc {}
+
+    &__title {
+        margin-bottom: rem(7);
+    }
+
+    &__balance {
+        margin-bottom: rem(30);
+        @extend %m-400;
+
+        span {
+            font-size: rem(21);
+            color: $accent-color;
+            @extend %m-600;
+        }
+    }
+
+    &__price {
+        font-size: 21px;
+        line-height: 1.2;
+        color: $accent-color;
+        margin-bottom: 10px;
+    }
+
+    &__view {
+        align-self: flex-start;
+        max-width: 250px;
+        max-height: 250px;
+        margin-bottom: rem(15);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px -30px;
+        padding-left: 15px;
+    }
+
+    &__item {
+        padding: 0 15px 30px;
+        flex: 0 0 33.333%;
+    }
+
+    &__more {
+        align-self: center;
+        margin-top: rem(20);
+    }
+}
+
+.nft-option {
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    justify-items: stretch;
+    height: 100%;
+    padding: 24px 20px 7px;
+    border-radius: 7px;
+    background: $white-color;
+    box-shadow: 0px 0px 9px 3px $inactived-color;
+
+    transition: all .2s;
+
+    &__voucher {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 7px;
+
+        color: $white-color;
+        background: $inactived-color;
+        padding: 0 rem(20);
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // flex-wrap: wrap;
+        gap: 0 rem(10);
+    }
+
+    &__info-text {
+        @extend %m-600;
+        font-size: rem(24);
+        line-height: 1.2;
+
+        >span {
+            display: block;
+            font-size: rem(10);
+        }
+    }
+
+    &__info-output {
+        text-align: right;
+
+        >span {
+            display: block;
+            font-size: rem(10);
+        }
+    }
+
+    &__info-link {
+        text-align: right;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__info-tickets {
+        @extend %m-600;
+        font-size: rem(24);
+        line-height: 1.2;
+    }
+
+    &__cells {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        margin: 0 rem(-2);
+    }
+
+    &__cell {
+        flex: 0 0 33.333%;
+        padding: 0 rem(2);
+    }
+
+    &__cell-inner {
+        font-size: rem(12);
+        color: $white-color;
+        background: $inactived-color;
+        border-radius: rem(7);
+        text-align: center;
+
+        span {
+            font-size: rem(10);
+            display: block;
+        }
+    }
+
+    &__controls {
+        justify-content: space-between;
+        margin-top: rem(15);
+        display: flex;
+        gap: rem(10) rem(5);
+        align-self: end;
+    }
+
+    &__status,
+    &__more {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        @extend %m-600;
+        font-size: rem(12);
+        line-height: 1;
+        border-radius: rem(5);
+        color: $white-color;
+        transition: all 0.2s ease 0s;
+
+        padding: rem(10) rem(7);
+    }
+
+    &__status {
+        background: $inactived-color;
+        // box-shadow: 0px 0px rem(10) $inactived-color;
+
+        position: relative;
+
+        &::before {
+            content: 'Inactived';
+        }
+
+        &::after {
+            content: 'Activate';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $green-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: rem(5);
+            transition: all .2s ease 0s;
+
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:hover {
+            background: $inactived-color;
+
+            &::after {
+                box-shadow: 0px 0px rem(10) $green-color;
+            }
+        }
+    }
+
+    &__more {
+        background: $dark-text-color;
+
+        &:hover {
+            background: #3f3e47;
+        }
+
+    }
+
+    &:hover {
+        background: #ea545521;
+
+        .nft-option__status {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &--active {
+        box-shadow: 0px 0px 9px 3px $accent-color;
+
+        .nft-option__status {
+            background: $accent-color;
+
+            &::before {
+                content: 'Actived';
+            }
+
+            &::after {
+                content: 'Inactivate';
+                background: $inactived-color;
+            }
+
+            &:hover {
+                background: $accent-color;
+
+                &::after {
+                    box-shadow: 0px 0px rem(10) $inactived-color;
+                }
+            }
+        }
+
+        .nft-option__cell-inner {
+            background: $accent-color;
+        }
+
+        .nft-option__voucher {
+            background: $accent-color;
+        }
+
+        &:hover {
+            background: #44c4e121;
+        }
+    }
+}
+
+.buy-sell {
+
+    &__title {}
+
+    &__list {
+        @include gridCards(fit, 260px, .2fr, 0);
+        margin: 0 rem(-15) rem(-30);
+    }
+
+    &__item {
+        padding: 0 rem(15) rem(30);
+    }
+
+    &__item-inner {
+        background: $white-color;
+        box-shadow: $shadow;
+        border-radius: 7px;
+        padding: 20px;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        * {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__item-view {
+        position: relative;
+        padding-bottom: 54%;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__item-title {
+        @extend %m-600;
+        font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    &__item-desc {
+        @extend %m-400;
+        flex-grow: 1;
+    }
+
+    &__item-balance {
+        font-size: 12px;
+        line-height: 1;
+        @extend %m-600;
+        color: $accent-color;
+        text-align: center;
+
+        box-shadow: 0 1px 0 #ebe9f1;
+
+        background: $accent-light-color;
+        padding: 4px 7px;
+        border-radius: 2px;
+    }
+
+    &__item-button {}
+}
+
+.clipboard-ref {
+    display: block;
+    box-shadow: $shadow;
+    background: $white-color;
+    border-radius: rem(5);
+    padding: rem(11) rem(20) rem(20);
+    max-width: rem(400);
+
+    &__desc {
+        @extend %m-600;
+        font-size: rem(20);
+        color: $accent-color;
+        margin-bottom: rem(20);
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        border-radius: rem(5);
+        background: $general-bg-color;
+        border-width: 0;
+        color: #000;
+        font-size: rem(20);
+        padding: rem(10);
+        margin-bottom: rem(20);
+        box-shadow: inset $shadow;
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 1;
+
+        button {
+            font-size: inherit;
+            display: block;
+            width: 100%;
+            border: 0;
+
+            background: $gradient;
+            color: $white-color;
+            border-radius: rem(5);
+            padding: rem(10);
+
+            transition: all 0.2s ease 0s;
+
+            &:hover {
+                box-shadow: $accent-shadow;
+            }
+        }
+
+    }
+
+    &__clipboard {
+        pointer-events: none;
+        color: #fff;
+
+        background: $hover-color;
+        padding: 0 rem(10);
+        border-radius: rem(5);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        transition: all 0.2s ease 0s;
+
+        opacity: 0;
+
+        &--active {
+            opacity: 1;
+        }
+    }
+}
+
+.contact {
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(30);
+    }
+
+    &__chat {
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {}
+
+    &__desc {
+        margin-bottom: rem(30);
+        max-width: rem(600);
+        flex-grow: 1;
+    }
+
+    &__option {
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+}
+
+.option-contact {
+    &__link {
+        color: $white-color;
+        display: block;
+        border-radius: rem(5);
+        @include adaptiveValue("padding-top", 70, 20);
+        @include adaptiveValue("padding-left", 30, 15);
+        @include adaptiveValue("padding-right", 30, 15);
+        @include adaptiveValue("padding-bottom", 70, 30);
+        text-align: center;
+        transition: all 0.2s ease 0s;
+    }
+
+    &__name {
+        font-size: rem(20);
+        @extend %m-600;
+        @include adaptiveValue("margin-bottom", 20, 0);
+        text-shadow: rem(2) rem(2) rem(4) #000;
+    }
+
+    &__text {
+        @extend %m-400;
+    }
+
+    &:hover {
+        .option-contact__link {
+            transform: translateX(10px);
+        }
+    }
+}
+
+.agreements {
+    &__title {}
+
+    &__collection {
+        @include gridCards(fit, 350px)
+    }
+
+    &__item {
+        border-radius: rem(5);
+        box-shadow: $shadow;
+        background: $white-color;
+    }
+}
+
+.agreement {
+    &__heading {
+        padding: rem(20) rem(15);
+    }
+
+    &__title {
+        @extend %m-600;
+        font-size: rem(18);
+        margin-bottom: em(5, 18);
+    }
+
+    &__category {}
+
+    &__img {
+        position: relative;
+        padding-bottom: 50%;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__controls {
+        @include gridCards(fit, 185px, 1fr, 15px);
+        padding: rem(20) rem(15);
+    }
+
+    &__button {}
+}
+
+
+
+
+
+
+@import "media";

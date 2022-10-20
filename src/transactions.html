@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("./html/head.html", {
+"title": "FIX Global",
+})
+
+<body>
+    <div class="wrapper">
+        @@include("./html/aside.html", {})
+        <div class="content">
+            <main class="main">
+                @@include("./html/user-nav.html", {})
+                <section class="main__transactions transactions">
+                    <div class="container">
+                        <table id="transactions" class="display nowrap" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Dollars</th>
+                                    <th>Fix Tokens</th>
+                                    <th>Date of Transaction</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Row 1 Data 1</td>
+                                    <td>Row 1 Data 2</td>
+                                    <td>Row 1 Data 3</td>
+                                    <td>Row 1 Data 4</td>
+                                    <td>Row 1 Data 5</td>
+                                    <td>Row 1 Data 6</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2 Data 1</td>
+                                    <td>Row 2 Data 2</td>
+                                    <td>Row 2 Data 3</td>
+                                    <td>Row 2 Data 4</td>
+                                    <td>Row 2 Data 5</td>
+                                    <td>Row 2 Data 6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+            @@include("./html/footer.html", {})
+        </div>
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

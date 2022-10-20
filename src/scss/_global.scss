@@ -1,0 +1,470 @@
+// Основа ======================================================================================================================================================
+
+html,
+body {
+    @extend %m-500;
+    background: $general-bg-color;
+    color: $dark-text-color;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.aside {
+    font-size: 15px;
+
+    position: relative;
+    z-index: 100;
+
+    width: 260px;
+    flex: 0 0 auto;
+
+    &__inner {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0 10px 15px;
+        background: $white-color;
+        box-shadow: $shadow;
+    }
+
+    &__logo {
+        margin: 0 0 15px 10px;
+        padding-right: 15px;
+    }
+
+    &__nav {}
+}
+
+.nav {
+    overflow: hidden;
+
+    &__list {
+        padding-right: 15px;
+        height: 100%;
+    }
+
+    &__item {
+        &--paper {
+            display: none;
+
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    .feather {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+    }
+
+    &__link {
+        display: flex;
+        padding: 10px 15px 10px 15px;
+        transition: all .2s;
+        
+        img {
+            max-width: rem(120);
+        }
+
+        &:hover {
+            transform: translateX(5px);
+        }
+
+        &--current {
+            background: $gradient;
+            box-shadow: 0 0 10px 1px #43c1deb3;
+            color: $white-color;
+            border-radius: 4px;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .simplebar-scrollbar {
+        &::before {
+            left: 2.5px;
+            right: 2.5px;
+            background: #aaa;
+        }
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main {
+    flex: 1 0 auto;
+    padding-top: 100px;
+
+    &__home {}
+
+    &__buy-sell {}
+
+    &__clipboard-ref {
+        margin-bottom: rem(50);
+    }
+}
+
+.container {
+    max-width: #{$container + px};
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo {
+    display: block;
+}
+
+.user-nav {
+    font-size: 14px;
+    line-height: 1;
+    @extend %m-400;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding: 20px 0 20px 260px;
+
+    &__inner {
+        background: $white-color;
+        box-shadow: $shadow;
+        padding: 11px 14px;
+        border-radius: 5px;
+        display: flex;
+    }
+
+    &__burger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+
+        transition: all .2s;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+    
+    &__button {
+        &:not(:last-child) {
+            margin-right: rem(10);
+        }
+    }
+
+    &__user {
+        position: relative;
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    &__user-button {
+        display: flex;
+        align-items: center;
+    }
+
+    &__user-text {
+        text-align: right;
+    }
+
+    &__user-name {
+        @extend %m-600;
+        margin-bottom: 6px;
+    }
+
+    &__user-pos {
+        font-size: 11.5px;
+    }
+
+    &__user-icon {
+        position: relative;
+        margin-left: 11px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: #28c76f;
+            border-radius: 50%;
+            width: 11px;
+            height: 11px;
+            border: 1px solid #fff;
+        }
+    }
+
+    &__user-img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__user-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        border: 1px solid #22292f0d;
+        background: $white-color;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        padding: 7px 0;
+        margin-top: 10px;
+        width: 170px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(5px);
+
+        transition: all .3s;
+
+        &--show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .feather {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+    }
+
+    &__user-list {}
+
+    &__user-item {}
+
+    &__user-link {
+        display: flex;
+        padding: 9px 18px;
+
+        transition: all .2s;
+
+        &:hover {
+            background: #7367f01f;
+            color: $accent-color;
+        }
+    }
+
+    &__user-divider {
+        border-top: 1px solid #22292f14;
+        margin: 7px 0;
+    }
+}
+
+.footer {
+    @extend %m-400;
+    padding: 30px 30px 11px;
+    display: flex;
+    justify-content: space-between;
+
+    &__copy {
+        a {
+            color: $accent-color;
+            transition: all .2s;
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+// Заголовки ======================================================================================================================================================
+
+h2,
+h3,
+h4,
+h5 {
+    @extend %m-600;
+    line-height: 1.2;
+    color: $dark-text-color;
+}
+
+h2 {
+    font-size: rem(24);
+    margin-bottom: rem(20);
+}
+
+h3 {
+    font-size: rem(20);
+    margin-bottom: rem(20);
+}
+
+h4 {
+    text-align: center;
+    font-size: rem(20);
+    margin-bottom: rem(20);
+}
+
+h5 {
+    font-size: rem(18);
+    margin-bottom: rem(20);
+}
+
+// Кнопки ======================================================================================================================================================
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: $accent-color;
+    border-radius: 5px;
+    color: $white-color;
+    text-align: center;
+    border: 1px solid $accent-color;
+
+    transition: all .2s;
+
+    &:hover {
+        box-shadow: $accent-shadow;
+    }
+
+    &--empty {
+        background: transparent;
+        color: $accent-color;
+
+        &:hover {
+            background: $accent-light-color;
+            box-shadow: none;
+        }
+    }
+
+    &--dark {
+        color: $dark-text-color;
+        border: 1px solid $dark-text-color;
+
+        &:hover {
+            background: #22292f1a;
+        }
+    }
+}
+
+// Попапы пибимпапы ======================================================================================================================================================
+
+.modal {
+
+    &__container {
+        overflow: hidden;
+    }
+
+    &__close {
+
+        &::before,
+        &::after {
+            background: $white-color;
+            transition: all 0.2s ease 0s;
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                background: $hover-color;
+            }
+        }
+    }
+
+    &__content {
+        padding-top: 0;
+        padding-bottom: rem(40);
+    }
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        margin: 0 -15px rem(30);
+        padding: rem(50) 0 rem(30);
+        background: linear-gradient(118deg, #44c4e1, #32799eb3);
+        color: $white-color;
+    }
+
+    &__subtitle {
+        span {
+            @extend %m-500;
+        }
+    }
+
+    &__text {
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__levels {}
+
+    &__lvl {
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__subtitle {}
+
+    &__lvl-list {}
+
+    &__lvl-item {
+        display: flex;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: em(5, 16);
+            height: em(5, 16);
+            margin: em(9, 16) em(5, 16) 0 0;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background-color: $dark-text-color;
+        }
+    }
+
+    &__button {
+        align-self: center;
+        margin: rem(30) 0 0;
+    }
+}
+
+.soon {
+    padding-top: rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+        margin: 0;
+    }
+}

@@ -1,0 +1,146 @@
+@media (max-width: 1400px) {
+    .nft-card {
+
+        &__item {
+            flex: 0 0 50%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #22292f47;
+        width: auto;
+        cursor: pointer;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all .2s .2s;
+
+        &__inner {
+            cursor: default;
+            width: 260px;
+
+            transform: translateX(-100%);
+
+            transition: all .2s;
+        }
+
+        &--show {
+            opacity: 1;
+            visibility: visible;
+
+            transition: all .2s;
+
+            .aside__inner {
+                transform: translateX(0);
+
+                transition: all .2s .2s;
+            }
+        }
+    }
+
+    .nav {
+        &__item {
+            &--paper {
+                display: block;
+            }
+        }
+    }
+
+    .user-nav {
+        padding-left: 0;
+
+        &__burger {
+            display: flex;
+        }
+
+        &__button {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: em(900)) {
+    .nft-card {
+        &__inner {
+            grid-template-columns: none;
+        }
+
+        &__about {
+            flex-direction: row;
+            padding: 0 0 15px;
+            border: none;
+            border-bottom: 1px solid #f6f6f6;
+        }
+
+        &__list {
+            padding: 15px 0 0;
+        }
+    }
+
+    .contact {
+        &__inner {
+            grid-template-columns: auto;
+        }
+
+        &__chat {
+            position: relative;
+            padding-bottom: 100%;
+            min-height: 500px;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+
+        &__copy {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: em(600)) {
+
+    .nft-card {
+        &__item {
+            flex: 0 0 100%;
+        }
+
+        &__about {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+
+    .agreements {
+        &__collection {
+            grid-template-columns: auto;
+        }
+    }
+
+    .agreement {
+        &__controls {
+            grid-template-columns: auto;
+        }
+    }
+}
