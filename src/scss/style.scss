@@ -558,7 +558,9 @@
     &__title {}
 
     &__collection {
-        @include gridCards(fit, 350px)
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(30);
     }
 
     &__item {

@@ -103,6 +103,12 @@
             }
         }
     }
+
+    .agreements {
+        &__collection {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 @media (max-width: 750px) {
@@ -126,6 +132,12 @@
 
         &__about {
             flex-direction: column-reverse;
+        }
+    }
+
+    .agreements {
+        &__collection {
+            grid-template-columns: auto;
         }
     }
 }
