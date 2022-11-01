@@ -337,6 +337,14 @@
 
     &__title {}
 
+    &__not-yet {
+        // text-align: center;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
     &__list {
         @include gridCards(fit, 320px, .25fr, 0);
         margin: 0 rem(-15) rem(-30);
@@ -405,6 +413,37 @@
     }
 
     &__item-button {}
+}
+
+.main {
+    &__not-yet {}
+}
+
+.not-yet {
+    height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__inner {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include adaptiveValue("padding-bottom", 100, 0, 320, 3);
+    }
+
+    &__text {
+        font-size: rem(30);
+        text-align: center;
+    }
+
+    &__button {}
 }
 
 .clipboard-ref {

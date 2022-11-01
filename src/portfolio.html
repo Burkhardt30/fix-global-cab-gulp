@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("./html/head.html", {
+"title": "FIX Global",
+})
+
+<body>
+    <div class="wrapper">
+        @@include("./html/aside.html", {})
+        <div class="content">
+            <main class="main">
+                @@include("./html/user-nav.html", {})
+                <!-- <section class="main__buy-sell buy-sell buy-sell--wide-image">
+                    <div class="container">
+                        <h2 class="buy-sell__title">
+                            NFT Accounts
+                        </h2>
+                        <div class="buy-sell__not-yet">
+                            <p class="buy-sell__text">
+                                You don't have the NFTs bought yet.
+                            </p>
+                            <a class="buy-sell__button button" href="@img/docs/lite-paper.pdf" target="_blank">
+                                Buy
+                            </a>
+                        </div>
+                        <ul class="buy-sell__list">
+                            <li class="buy-sell__item" v-for="(item, itemIndex) in FIXGNfts" :key="itemIndex">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img :src="'https://nft-api.fixglobal.pro/fixg/' + item + '.jpg'" alt=""
+                                            @click="redirect('https://nft-api.fixglobal.pro/fixg/' + item + '.jpg')">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Gold NFT #{{ item }}
+                                    </h3>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>{{ item }}</span>
+                                    </div>
+                                    <a class="buy-sell__item-button button button--empty button--dark" href="#">
+                                        Sell NFT
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="buy-sell__item" v-for="(item, itemIndex) in FIXDNfts" :key="itemIndex">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img :src="'https://nft-api.fixglobal.pro/fixd/' + item + '.jpg'" alt=""
+                                            @click="redirect('https://nft-api.fixglobal.pro/fixd/' + item + '.jpg')">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Diamond NFT #{{ item }}
+                                    </h3>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>{{ item }}</span>
+                                    </div>
+                                    <a class="buy-sell__item-button button button--empty button--dark" href="#">
+                                        Sell NFT
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section> -->
+                <section class="main__not-yet not-yet">
+                    <div class="container">
+                        <h2 class="buy-sell__title">
+                            NFT Accounts
+                        </h2>
+                        <div class="not-yet__inner">
+                            <h2 class="not-yet__text">
+                                You don't have the NFTs bought yet.
+                            </h2>
+                            <a class="not-yet__button button" href="@img/docs/lite-paper.pdf" target="_blank">
+                                Buy
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                @@include("./html/modal.html", {})
+            </main>
+            @@include("./html/footer.html", {})
+        </div>
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

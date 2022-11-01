@@ -9,6 +9,75 @@ body {
     line-height: 1.5;
 }
 
+// Заголовки ======================================================================================================================================================
+
+h2,
+h3,
+h4,
+h5 {
+    @extend %m-600;
+    line-height: 1.2;
+    color: $dark-text-color;
+}
+
+h2 {
+    font-size: rem(24);
+    margin-bottom: rem(20);
+}
+
+h3 {
+    font-size: rem(20);
+    margin-bottom: rem(20);
+}
+
+h4 {
+    text-align: center;
+    font-size: rem(20);
+    margin-bottom: rem(20);
+}
+
+h5 {
+    font-size: rem(18);
+    margin-bottom: rem(20);
+}
+
+// Кнопки ======================================================================================================================================================
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: $accent-color;
+    border-radius: 5px;
+    color: $white-color;
+    text-align: center;
+    border: 1px solid $accent-color;
+
+    transition: all .2s;
+
+    &:hover {
+        box-shadow: $accent-shadow;
+    }
+
+    &--empty {
+        background: transparent;
+        color: $accent-color;
+
+        &:hover {
+            background: $accent-light-color;
+            box-shadow: none;
+        }
+    }
+
+    &--dark {
+        color: $dark-text-color;
+        border: 1px solid $dark-text-color;
+
+        &:hover {
+            background: #22292f1a;
+        }
+    }
+}
+
 .wrapper {
     overflow: hidden;
     min-height: 100%;
@@ -153,6 +222,7 @@ body {
         padding: 11px 14px;
         border-radius: 5px;
         display: flex;
+        align-items: center;
     }
 
     &__burger {
@@ -171,6 +241,15 @@ body {
     &__button {
         &:not(:last-child) {
             margin-right: rem(10);
+        }
+    }
+
+    &__logo {
+        width: rem(92);
+        display: none;
+
+        img {
+            width: 100%;
         }
     }
 
@@ -296,75 +375,6 @@ body {
             &:hover {
                 color: $hover-color;
             }
-        }
-    }
-}
-
-// Заголовки ======================================================================================================================================================
-
-h2,
-h3,
-h4,
-h5 {
-    @extend %m-600;
-    line-height: 1.2;
-    color: $dark-text-color;
-}
-
-h2 {
-    font-size: rem(24);
-    margin-bottom: rem(20);
-}
-
-h3 {
-    font-size: rem(20);
-    margin-bottom: rem(20);
-}
-
-h4 {
-    text-align: center;
-    font-size: rem(20);
-    margin-bottom: rem(20);
-}
-
-h5 {
-    font-size: rem(18);
-    margin-bottom: rem(20);
-}
-
-// Кнопки ======================================================================================================================================================
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: $accent-color;
-    border-radius: 5px;
-    color: $white-color;
-    text-align: center;
-    border: 1px solid $accent-color;
-
-    transition: all .2s;
-
-    &:hover {
-        box-shadow: $accent-shadow;
-    }
-
-    &--empty {
-        background: transparent;
-        color: $accent-color;
-
-        &:hover {
-            background: $accent-light-color;
-            box-shadow: none;
-        }
-    }
-
-    &--dark {
-        color: $dark-text-color;
-        border: 1px solid $dark-text-color;
-
-        &:hover {
-            background: #22292f1a;
         }
     }
 }

@@ -57,12 +57,24 @@
     .user-nav {
         padding-left: 0;
 
+        &__inner {
+            justify-content: space-between;
+        }
+
         &__burger {
             display: flex;
         }
 
         &__button {
             display: none;
+        }
+
+        &__logo {
+            display: block;
+        }
+
+        &__user {
+            margin: 0;
         }
     }
 }
