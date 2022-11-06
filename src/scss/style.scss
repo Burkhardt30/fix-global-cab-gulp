@@ -644,6 +644,239 @@
     &__button {}
 }
 
+.staking {
+
+    .container {
+        max-width: rem(1220);
+    }
+
+    &__heading {}
+
+    &__plans {
+        display: grid;
+        grid-auto-flow: column;
+        gap: rem(30);
+    }
+
+    &__plan {
+        margin-bottom: rem(30);
+    }
+}
+
+.plan {
+
+    background: $white-color;
+    box-shadow: $shadow;
+    border-radius: rem(5);
+    padding: rem(21);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__badge {
+        font-size: rem(12);
+        line-height: 1;
+        font-weight: 600;
+        color: $accent-color;
+        background: #7367f01f;
+        padding: rem(4) rem(7);
+        border-radius: rem(10);
+        align-self: flex-end;
+    }
+
+    &__img {
+        max-width: rem(135);
+        padding-top: rem(55);
+        padding-bottom: rem(21);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: em(7, 20);
+    }
+
+    &__desc {
+        font-size: rem(14);
+        font-weight: 400;
+        margin-bottom: em(14, 14);
+    }
+
+    &__price {
+        margin-bottom: em(24, 15);
+        position: relative;
+
+        sup {
+            position: absolute;
+            top: 0;
+            right: 100%;
+
+            color: $accent-color;
+            font-size: rem(15);
+        }
+
+        span {
+            font-size: rem(49);
+            line-height: 1;
+            font-weight: 600;
+            color: $accent-color;
+        }
+
+        sub {
+            position: absolute;
+            left: 100%;
+            bottom: 0;
+            font-size: rem(15);
+        }
+    }
+
+    &__list {
+        align-self: stretch;
+        font-size: rem(14);
+        margin-bottom: em(30, 14);
+        flex: 1 1 auto;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+
+        display: flex;
+
+        &::before {
+            content: '';
+            margin-top: em(5, 14);
+            margin-right: em(10, 14);
+            width: rem(10);
+            height: rem(10);
+            background: transparent;
+            border: rem(1) solid $dark-text-color;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    }
+
+    &__button {
+        align-self: stretch;
+    }
+
+    &--popular {
+        margin-bottom: 0;
+        box-shadow: 0 0 15px 0 $accent-color;
+    }
+}
+
+.trial {
+
+    &__inner {
+        border-radius: rem(5);
+        background: #f1f1f2;
+        @include adaptiveValue("padding-top", 40, 30);
+        @include adaptiveValue("padding-bottom", 55, 35);
+
+        .container {
+            max-width: rem(1220);
+        }
+    }
+
+    &__body {}
+
+    &__title {
+        text-align: left;
+        color: $accent-color;
+        margin-bottom: em(7, 20);
+    }
+
+    &__text {
+        font-size: rem(15);
+        @include adaptiveValue("margin-bottom", 50, 30);
+    }
+
+    &__button {}
+}
+
+.faq {
+
+    .container {
+        max-width: rem(1220);
+    }
+
+    &__heading {}
+
+    &__accordion {}
+
+    .accordion {
+        &__item {
+            background: $white-color;
+            box-shadow: $shadow;
+            border-radius: rem(5);
+
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+
+            &--open {
+                .accordion__content {
+                    padding: rem(6) 0 rem(14);
+                    @include adaptiveValue("padding-left", 14, 10);
+                    @include adaptiveValue("padding-right", 14, 10);
+                }
+
+                .accordion__button {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        &__button {
+            font-size: rem(15);
+            font-weight: 500;
+
+            padding: rem(14) 0;
+            @include adaptiveValue("padding-left", 14, 10);
+            @include adaptiveValue("padding-right", 14, 10);
+
+            display: flex;
+            justify-content: space-between;
+            column-gap: em(10, 15);
+
+            svg {
+                width: rem(14);
+                height: rem(14);
+                margin-top: em(4, 15);
+                transition: all .3s;
+                flex-shrink: 0;
+            }
+        }
+
+        &__content {
+            overflow: hidden;
+            max-height: 0;
+            @include adaptiveValue("padding-left", 14, 10);
+            @include adaptiveValue("padding-right", 14, 10);
+            transition: all .3s;
+            box-sizing: content-box;
+            will-change: max-height;
+        }
+
+        &__text {
+            font-size: rem(14);
+            font-weight: 400;
+
+            p {
+                &:not(:last-child) {
+                    margin-bottom: rem(20);
+                }
+            }
+        }
+    }
+}
 
 
 

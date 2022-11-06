@@ -79,6 +79,28 @@
     }
 }
 
+@media (max-width: em(1000)) {
+    .staking {
+        &__plans {
+            grid-template: repeat(2, auto) / repeat(2, 1fr);
+            justify-items: center;
+        }
+
+        &__plan {
+            margin: 0;
+        }
+    }
+
+    .plan {
+        max-width: rem(470);
+        width: 100%;
+
+        &--popular {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
 @media (max-width: em(900)) {
     .nft-card {
         &__inner {
@@ -125,6 +147,31 @@
 
 @media (max-width: 750px) {
 
+    .staking {
+        &__plans {
+            grid-template: none;
+            grid-auto-flow: row;
+        }
+    }
+
+    .plan {
+        &--popular {
+            grid-column: auto;
+        }
+
+        &:nth-child(1) {
+            order: 2;
+        }
+
+        &:nth-child(2) {
+            order: 1;
+        }
+
+        &:nth-child(3) {
+            order: 3;
+        }
+    }
+
     .footer {
         flex-direction: column;
         text-align: center;
@@ -136,6 +183,12 @@
 }
 
 @media (max-width: em(600)) {
+
+    .plan-nfts-popup {
+        &__select-list-inner {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
     .nft-card {
         &__item {
@@ -155,6 +208,19 @@
 }
 
 @media (max-width: 450px) {
+
+    .plan-nfts-popup {
+        &__select-list-inner {
+            grid-template-columns: none;
+        }
+        &__bottom {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        &__button {
+            align-self: center;
+        }
+    }
 
     .agreements {
         &__collection {
