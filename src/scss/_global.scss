@@ -565,7 +565,9 @@ h5 {
         gap: rem(10);
     }
 
-    &__checkbox {}
+    &__checkbox {
+        cursor: pointer;
+    }
 
     &__default-checkbox {
         @extend %checkbox-hidden;
@@ -592,8 +594,6 @@ h5 {
         background: $general-bg-color;
         border-radius: rem(5);
         padding: rem(20);
-        // @include adaptiveValue("padding-left", 20, 10);
-        // @include adaptiveValue("padding-right", 20, 5);
         box-shadow: inset 0 0 15px 0 #22292f1a;
     }
 
