@@ -43,6 +43,18 @@ let partnersTable = new DataTable('#partners', {
     ],
 });
 
+let stakingTable = new DataTable('#staking', {
+    responsive: true,
+    // columns: [
+    //     { responsivePriority: 1 },
+    //     { responsivePriority: 3 },
+    //     { responsivePriority: 4 },
+    //     { responsivePriority: 5 },
+    //     { responsivePriority: 6 },
+    //     { responsivePriority: 2 },
+    // ],
+});
+
 
 // Скопировать рефералку
 

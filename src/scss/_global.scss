@@ -60,6 +60,9 @@ h5 {
 // Кнопки ======================================================================================================================================================
 
 .button {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
     display: inline-block;
     padding: 10px 20px;
     background: $accent-color;
@@ -70,7 +73,7 @@ h5 {
 
     transition: all .2s;
 
-    &:hover {
+    &:not([disabled]):hover {
         box-shadow: $accent-shadow;
     }
 
@@ -78,7 +81,7 @@ h5 {
         background: transparent;
         color: $accent-color;
 
-        &:hover {
+        &:not([disabled]):hover {
             background: $accent-light-color;
             box-shadow: none;
         }
@@ -88,7 +91,7 @@ h5 {
         color: $dark-text-color;
         border: 1px solid $dark-text-color;
 
-        &:hover {
+        &:not([disabled]):hover {
             background: #{$dark-text-color}1a;
         }
     }
@@ -97,9 +100,13 @@ h5 {
         color: $green-color;
         border: 1px solid $green-color;
 
-        &:hover {
+        &:not([disabled]):hover {
             background: #{$green-color}1a;
         }
+    }
+
+    &[disabled] {
+        cursor: default;
     }
 }
 
@@ -218,7 +225,7 @@ h5 {
     }
 
     &__staking {
-        @include adaptiveValue("padding-top", 50, 0);
+        @include adaptiveValue("padding-top", 100, 50);
         @include adaptiveValue("padding-bottom", 105, 50);
     }
 
@@ -227,6 +234,15 @@ h5 {
     }
 
     &__faq {}
+
+    &__transactions {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 90, 50);
+        }
+    }
+    
+    &__bonus-withdrawal {
+    }
 }
 
 .container {
