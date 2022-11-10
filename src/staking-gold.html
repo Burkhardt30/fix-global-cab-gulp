@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("./html/head.html", {
+"title": "FIX Global",
+})
+
+<body>
+    <div class="wrapper">
+        @@include("./html/aside.html", {})
+        <div class="content">
+            <main class="main">
+                @@include("./html/user-nav.html", {})
+                <section class="main__buy-sell buy-sell">
+                    <div class="container">
+                        <div class="buy-sell__heading heading">
+                            <h2 class="heading__title">
+                                Your staked NFT
+                            </h2>
+                        </div>
+                        <ul class="buy-sell__list">
+                            <li class="buy-sell__item">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img src="@img/media/fixdiamondanime.gif" alt="">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Platinum NFT
+                                    </h3>
+                                    <p class="buy-sell__item-desc">
+                                        Description NFT
+                                    </p>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>777</span>
+                                    </div>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Price: <span>777</span>$
+                                    </div>
+                                    <button class="buy-sell__button button button--empty" type="button" disabled>
+                                        Staking time
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="buy-sell__item">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img src="@img/media/fixdiamondanime.gif" alt="">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Platinum NFT
+                                    </h3>
+                                    <p class="buy-sell__item-desc">
+                                        Description NFT
+                                    </p>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>777</span>
+                                    </div>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Price: <span>777</span>$
+                                    </div>
+                                    <button class="buy-sell__button button button--empty" type="button" disabled>
+                                        Staking time
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="buy-sell__item">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img src="@img/media/fixdiamondanime.gif" alt="">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Platinum NFT
+                                    </h3>
+                                    <p class="buy-sell__item-desc">
+                                        Description NFT
+                                    </p>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>777</span>
+                                    </div>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Price: <span>777</span>$
+                                    </div>
+                                    <button class="buy-sell__button button button--empty" type="button" disabled>
+                                        Staking time
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="buy-sell__item">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img src="@img/media/fixdiamondanime.gif" alt="">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Platinum NFT
+                                    </h3>
+                                    <p class="buy-sell__item-desc">
+                                        Description NFT
+                                    </p>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>777</span>
+                                    </div>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Price: <span>777</span>$
+                                    </div>
+                                    <button class="buy-sell__button button button--empty" type="button" disabled>
+                                        Staking time
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="buy-sell__item">
+                                <div class="buy-sell__item-inner">
+                                    <div class="buy-sell__item-view">
+                                        <img src="@img/media/fixdiamondanime.gif" alt="">
+                                    </div>
+                                    <h3 class="buy-sell__item-title">
+                                        FIX Platinum NFT
+                                    </h3>
+                                    <p class="buy-sell__item-desc">
+                                        Description NFT
+                                    </p>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Number: <span>777</span>
+                                    </div>
+                                    <div class="buy-sell__item-balance">
+                                        NFT Price: <span>777</span>$
+                                    </div>
+                                    <button class="buy-sell__button button button--empty" type="button" disabled>
+                                        Staking time
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="buy-sell__staking-table staking-table">
+                            <div class="container">
+                                <!-- Порядок скрывания столбцов при адаптиве указывается через js -->
+                                <table id="staking-gold" class="display nowrap" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Title 1</th>
+                                            <th>Title 2</th>
+                                            <th>Title 3</th>
+                                            <th>Title 4</th>
+                                            <th>Title 5</th>
+                                            <th>Title 6</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Row 1 Data 1</td>
+                                            <td>Row 1 Data 2</td>
+                                            <td>Row 1 Data 3</td>
+                                            <td>Row 1 Data 4</td>
+                                            <td>Row 1 Data 5</td>
+                                            <td>Row 1 Data 6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 2 Data 1</td>
+                                            <td>Row 2 Data 2</td>
+                                            <td>Row 2 Data 3</td>
+                                            <td>Row 2 Data 4</td>
+                                            <td>Row 2 Data 5</td>
+                                            <td>Row 2 Data 6</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main__staking staking staking--gold">
+                    <div class="container">
+                        <div class="staking__heading heading">
+                            <h2 class="heading__title">
+                                Staking Plans <span>Fix Gold</span>
+                            </h2>
+                            <p class="heading__text">
+                                All plans include 40+ advanced tools and features to boost your product. Choose the best
+                                plan to fit your needs.
+                            </p>
+                        </div>
+                        <div class="staking__plans">
+                            <div class="staking__plan plan">
+                                <div class="plan__img">
+                                    <img src="@img/content/staking/vision.png" alt="">
+                                </div>
+                                <h3 class="plan__title">
+                                    STANDART
+                                </h3>
+                                <div class="plan__price">
+                                    <span>12</span> <sub>months</sub>
+                                </div>
+                                <ul class="plan__list">
+                                    <li class="plan__item">
+                                        300 USDT - Staking for 12 months
+                                    </li>
+                                    <li class="plan__item">
+                                        Every 5 NFT +1 VIP ticket to the ProfiXone event
+                                    </li>
+                                </ul>
+                                <a class="plan__button button button--empty button--green" href="#">
+                                    Your current plan
+                                </a>
+                            </div>
+                            <div class="staking__plan plan plan--popular">
+                                <div class="plan__badge">
+                                    Popular
+                                </div>
+                                <div class="plan__img">
+                                    <img src="@img/content/staking/vision.png" alt="">
+                                </div>
+                                <h3 class="plan__title">
+                                    PRO
+                                </h3>
+                                <div class="plan__price">
+                                    <span>24</span> <sub>months</sub>
+                                </div>
+                                <ul class="plan__list">
+                                    <li class="plan__item">
+                                        700 USDT - Staking for 24 months
+                                        <br>
+                                        (350 USDT for 12 months)
+                                    </li>
+                                    <li class="plan__item">
+                                        Every 3 NFT +1 VIP ticket to the ProfiXone event
+                                    </li>
+                                    <li class="plan__item">
+                                        Every 5 NFT + Voucher for jewelry products worth $1500
+                                    </li>
+                                </ul>
+                                <a class="plan__button button" href="#">
+                                    Upgrade
+                                </a>
+                            </div>
+                            <div class="staking__plan plan">
+                                <div class="plan__img">
+                                    <img src="@img/content/staking/vision.png" alt="">
+                                </div>
+                                <h3 class="plan__title">
+                                    PREMIUM
+                                </h3>
+                                <div class="plan__price">
+                                    <span>36</span> <sub>months</sub>
+                                </div>
+                                <ul class="plan__list">
+                                    <li class="plan__item">
+                                        1400 USDT - Staking for 36 months
+                                        <br>
+                                        (427 USDT for 12 months)
+                                    </li>
+                                    <li class="plan__item">
+                                        Every 3 NFT +1 VIP ticket to the ProfiXone event
+                                    </li>
+                                    <li class="plan__item">
+                                        Physical coin
+                                        <br>
+                                        FIX Gold 50g GOLD, 18K
+                                    </li>
+                                </ul>
+                                <a class="plan__button button button--empty button--gold" data-path="staking-plan-3"
+                                    data-animation="fadeInUp" data-speed="300" href="#">
+                                    Upgrade
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main__trial trial">
+                    <div class="container">
+                        <div class="trial__inner">
+                            <div class="container">
+                                <div class="trial__body">
+                                    <h4 class="trial__title">
+                                        Still not convinced? Start with a 14-day FREE trial!
+                                    </h4>
+                                    <p class="trial__text">
+                                        You will get full access to with all the features for 14 days.
+                                    </p>
+                                    <a class="trial__button button" href="#">
+                                        Start 14-day FREE trial
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main__faq faq">
+                    <div class="container">
+                        <div class="faq__heading heading">
+                            <h2 class="heading__title">
+                                FAQ's
+                            </h2>
+                            <p class="heading__text">
+                                Let us help answer the most common questions.
+                            </p>
+                        </div>
+                        <ul class="faq__accordion accordion">
+                            <li class="accordion__item">
+                                <a class="accordion__button" href="#">
+                                    Does my subscription automatically renew?
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="#6e6b7b" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="18 15 12 9 6 15" />
+                                    </svg>
+                                </a>
+                                <div class="accordion__content">
+                                    <div class="accordion__text">
+                                        <p>
+                                            Pastry pudding cookie toffee bonbon jujubes jujubes powder topping. Jelly
+                                            beans gummi bears sweet roll bonbon muffin liquorice. Wafer lollipop sesame
+                                            snaps. Brownie macaroon cookie muffin cupcake candy caramels tiramisu. Oat
+                                            cake chocolate cake sweet jelly-o brownie biscuit marzipan. Jujubes donut
+                                            marzipan chocolate bar. Jujubes sugar plum jelly beans tiramisu icing
+                                            cheesecake.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion__item">
+                                <a class="accordion__button" href="#">
+                                    Can I store the item on an intranet so everyone has access?
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="#6e6b7b" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="18 15 12 9 6 15" />
+                                    </svg>
+                                </a>
+                                <div class="accordion__content">
+                                    <div class="accordion__text">
+                                        <p>
+                                            Tiramisu marshmallow dessert halvah bonbon cake gingerbread. Jelly beans
+                                            chocolate pie powder. Dessert pudding chocolate cake bonbon bear claw cotton
+                                            candy cheesecake. Biscuit fruitcake macaroon carrot cake. Chocolate cake
+                                            bear claw muffin chupa chups pudding.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion__item">
+                                <a class="accordion__button" href="#">
+                                    Am I allowed to modify the item that I purchased?
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="#6e6b7b" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="18 15 12 9 6 15" />
+                                    </svg>
+                                </a>
+                                <div class="accordion__content">
+                                    <div class="accordion__text">
+                                        <p>
+                                            Tart gummies dragée lollipop fruitcake pastry oat cake. Cookie jelly jelly
+                                            macaroon icing jelly beans soufflé cake sweet. Macaroon sesame snaps
+                                            cheesecake tart cake sugar plum. Dessert jelly-o sweet muffin chocolate
+                                            candy pie tootsie roll marzipan. Carrot cake marshmallow pastry. Bonbon
+                                            biscuit pastry topping toffee dessert gummies. Topping apple pie pie
+                                            croissant cotton candy dessert tiramisu.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                @@include("./html/modal.html", {})
+            </main>
+            @@include("./html/footer.html", {})
+        </div>
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -43,7 +43,18 @@ let partnersTable = new DataTable('#partners', {
     ],
 });
 
-let stakingTable = new DataTable('#staking', {
+let stakingGoldTable = new DataTable('#staking-gold', {
+    responsive: true,
+    // columns: [
+    //     { responsivePriority: 1 },
+    //     { responsivePriority: 3 },
+    //     { responsivePriority: 4 },
+    //     { responsivePriority: 5 },
+    //     { responsivePriority: 6 },
+    //     { responsivePriority: 2 },
+    // ],
+});
+let stakingDiamondTable = new DataTable('#staking-diamond', {
     responsive: true,
     // columns: [
     //     { responsivePriority: 1 },
