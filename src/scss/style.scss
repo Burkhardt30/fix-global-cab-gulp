@@ -679,48 +679,21 @@
             }
         }
 
-        .plan {
+        .button {
+            background: $gold-color;
+            border-color: $gold-color;
 
-            &__badge {
+            &:not([disabled]):hover {
+                box-shadow: 0 8px 25px -8px $gold-color;
+            }
+
+            &--empty {
                 color: $gold-color;
-                background: #{$gold-color}36;
-            }
-
-            &__price {
-                span {
-                    color: $gold-color;
-                }
-            }
-
-            &--popular {
-                box-shadow: 0 0 15px 0 $gold-color;
-            }
-
-            .button {
-                background: $gold-color;
-                border-color: $gold-color;
+                background: transparent;
 
                 &:not([disabled]):hover {
-                    box-shadow: 0 8px 25px -8px $gold-color;
-                }
-
-                &--empty {
-                    color: $gold-color;
-                    background: transparent;
-
-                    &:not([disabled]):hover {
-                        background: #{$gold-color}1a;
-                        box-shadow: none;
-                    }
-                }
-
-                &--green {
-                    color: $green-color;
-                    border: 1px solid $green-color;
-
-                    &:not([disabled]):hover {
-                        background: #{$green-color}1a;
-                    }
+                    background: #{$gold-color}1a;
+                    box-shadow: none;
                 }
             }
         }
@@ -746,6 +719,8 @@
     align-items: center;
     flex-direction: column;
 
+    transition: all 0.3s ease 0s;
+
     &__badge {
         font-size: rem(12);
         line-height: 1;
@@ -755,6 +730,11 @@
         padding: rem(4) rem(7);
         border-radius: rem(10);
         align-self: flex-end;
+
+        .staking--gold & {
+            color: $gold-color;
+            background: #{$gold-color}36;
+        }
     }
 
     &__img {
@@ -803,6 +783,12 @@
             bottom: 0;
             font-size: rem(15);
         }
+
+        .staking--gold & {
+            span {
+                color: $gold-color;
+            }
+        }
     }
 
     &__list {
@@ -836,9 +822,33 @@
         align-self: stretch;
     }
 
-    &--popular {
+    &:hover {
         margin-bottom: 0;
         box-shadow: 0 0 15px 0 $accent-color;
+
+        .button {
+            color: $white-color;
+            background-color: $accent-color;
+            border-color: $accent-color;
+
+            &:not([disabled]):hover {
+                box-shadow: $accent-shadow;
+            }
+        }
+    }
+
+    .staking--gold &:hover {
+        box-shadow: 0 0 15px 0 $gold-color;
+
+        .button {
+            color: $white-color;
+            background-color: $gold-color;
+            border-color: $gold-color;
+
+            &:not([disabled]):hover {
+                box-shadow: 0 8px 25px -8px $gold-color;
+            }
+        }
     }
 }
 
