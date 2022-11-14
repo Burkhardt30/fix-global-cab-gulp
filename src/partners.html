@@ -11,14 +11,32 @@
         <div class="content">
             <main class="main">
                 @@include("./html/user-nav.html", {})
-                <div class="main__clipboard-ref">
+                <div class="main__helper-row helper-row">
                     <div class="container">
-                        <div class="clipboard-ref">
-                            <p class="clipboard-ref__desc">My Referral Link</p>
-                            <input class="clipboard-ref__input" id="myInput" readonly value="Вот это вот скопируется">
-                            <div class="clipboard-ref__btn">
-                                <button>Copy</button>
-                                <span class="clipboard-ref__clipboard">Copied</span>
+                        <div class="helper-row__inner">
+                            <div class="clipboard-ref">
+                                <p class="clipboard-ref__desc">My Referral Link</p>
+                                <input class="clipboard-ref__input" id="myInput" readonly value="Вот это вот скопируется">
+                                <div class="clipboard-ref__btn">
+                                    <button>Copy</button>
+                                    <span class="clipboard-ref__clipboard">Copied</span>
+                                </div>
+                            </div>
+                            <div class="value-display">
+                                <div class="value-display__title">
+                                    Direct partners
+                                </div>
+                                <div class="value-display__value">
+                                    10
+                                </div>
+                            </div>
+                            <div class="value-display">
+                                <div class="value-display__title">
+                                    Total partners
+                                </div>
+                                <div class="value-display__value">
+                                    43
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -143,6 +143,12 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
+    .helper-row {
+        &__inner {
+            flex-direction: column;
+        }
+    }
 }
 
 @media (max-width: 750px) {
@@ -173,7 +179,7 @@
 @media (max-width: em(600)) {
 
     .plan-nfts-popup {
-        &__select-list-inner {
+        &__select-list {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -198,7 +204,7 @@
 @media (max-width: 450px) {
 
     .plan-nfts-popup {
-        &__select-list-inner {
+        &__select-list {
             grid-template-columns: none;
         }
         &__bottom {

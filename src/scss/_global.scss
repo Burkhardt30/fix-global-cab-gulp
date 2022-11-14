@@ -220,7 +220,7 @@ h5 {
 
     &__buy-sell {}
 
-    &__clipboard-ref {
+    &__helper-row {
         margin-bottom: rem(50);
     }
 
@@ -565,7 +565,7 @@ h5 {
         }
     }
     
-    &__select-list {
+    &__body {
         background: $general-bg-color;
         border-radius: rem(5);
         padding: rem(20);
@@ -575,7 +575,7 @@ h5 {
         margin-bottom: rem(30);
     }
 
-    &__select-list-inner {
+    &__select-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: rem(10);
@@ -617,6 +617,31 @@ h5 {
     }
 
     &__button {}
+
+    &__not-yet {
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    &__text {
+        margin-bottom: rem(30);
+    }
+
+    &--empty {
+        .plan-nfts-popup__body {
+            height: auto;
+        }
+        .plan-nfts-popup__not-yet {
+            display: flex;
+        }
+        .plan-nfts-popup__select-list {
+            display: none;
+        }
+    }
 }
 
 .nft-card-popup {

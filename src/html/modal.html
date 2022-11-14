@@ -396,9 +396,19 @@
                 <h4 class="popup__title">
                     Lorem ipsum dolor sit amet.
                 </h4>
+                <!-- Добавить модификатор  plan-nfts-popup--empty,
+                когда нет нфт -->
                 <form class="popup__plan-nfts plan-nfts-popup">
-                    <div class="plan-nfts-popup__select-list" data-simplebar>
-                        <div class="plan-nfts-popup__select-list-inner">
+                    <div class="plan-nfts-popup__body" data-simplebar>
+                        <div class="plan-nfts-popup__not-yet">
+                            <p class="plan-nfts-popup__text">
+                                You don't have the NFTs bought yet.
+                            </p>
+                            <a class="plan-nfts-popup__button button" href="#">
+                                Buy
+                            </a>
+                        </div>
+                        <div class="plan-nfts-popup__select-list">
                             <label class="plan-nfts-popup__checkbox">
                                 <input class="plan-nfts-popup__default-checkbox" type="checkbox">
                                 <div class="plan-nfts-popup__nft-card nft-card-popup">
